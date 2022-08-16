@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior Tecnológico Japon</title>
+    <style type="text/css">
+        body{
+            text-align: center
+        }
+        .letras{          
+		color: #35148D    ;  
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+		z-index: 2;
+       }
+       .amor{ 
+		background: rgba(246, 195, 44, 0.91);	
+        letter-spacing: 6px;
+       }
+       button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+        }
+
+        button.learn-more {
+        width: 15rem;
+        height: auto;
+        }
+
+        button.learn-more .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: rgba(246, 195, 44, 0.91);
+        border-radius: 1.625rem;
+        }
+
+        button.learn-more .circle .icon {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: rgb(255, 255, 255);
+        }
+
+        button.learn-more .circle .icon.arrow {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+        }
+
+        button.learn-more .circle .icon.arrow::before {
+        position: absolute;
+        content: "";
+        top: -0.29rem;
+        right: 0.0625rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-top: 0.125rem solid #35148D;
+        border-right: 0.125rem solid #35148D;
+        transform: rotate(45deg);
+        }
+
+        button.learn-more .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+        }
+
+        button:hover .circle {
+        width: 100%;
+        }
+
+        button:hover .circle .icon.arrow {
+        background: #35148D;
+        transform: translate(1rem, 0);
+        }
+
+        button:hover .button-text {
+        color: #fff;
+        }
+       a{
+        text-decoration: none; 
+       }  
+    </style>
+</head>
+<body>
+    <img src="logo.png" width="330" >
+    <div class="letras" ><h1 >INSTITUTO SUPERIOR  </h1>
+        <h1>TECNOLÓGICO JAPÓN</h1>
+        <h3 class="amor" >AMOR AL CONOCIMIENTO</h3>
+        <br>
+        <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text"><a href="inicio.html">Más informacion</a></span>
+          </button>
+        <br>
+        <br>
+        <a href="https://itsjapon.edu.ec/" target="_blank" rel="noopener moreferrer"><h5> WWW.ITSJAPON.EDU.EC</h5></a>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATpJREFUSEu1lYsNwjAMRI9NYBJgE5gEmASYBDYBNoFXJZGbOp8isISCmthn+y7OQn+2xZ/jqwdgI4nfOqxPSXdJr7Dyv2g1gKWkcwhaiwHgVhLrxEoAR0mHGe0j+FUSfiPzAHqDE5QqrZ1ykBwAh0clc4IS5GLO2ITY3wduhiM5wK3R85XT67xiQDg3AdgFUksFkDXZRaNafKK6rB+kD+qyFbR6b/vbSiadtQBIEseSkX3sfSsZsqeKUQWQm6vCgs0BSDzYCjyAEWGF0krCGGJbAO9gD4CXWBJEi+Q4BkjGjgLbSu/euAAMNKr4BcmJrzkXrZfkpCDvJtdGRS9AumQeAN9KGu8BaA672H8PpAVg9xOPcx6cEsBkglqV9DyZcahBXnweGSl8R47uS+ZN04pCv9/qqeD76B/PN4+GURm4OV6aAAAAAElFTkSuQmCC"/>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAW5JREFUSEvFlc1NQ0EMhCdNcAUqAS7cKQAJKgEk+gDK4ARUws+BOxUEfcjzZO1zNhuhp+wlSmJ7xuNZ70oLn9XC9bU3gCNJV5JOJJ12uvyI/14l3Uny9yml6oDCDxFBAsm9AxlIEPsk6TYHtwAEv0fRsx3mQ95LxF9nUi0AzOnguGq3ALwMaX4kXVTkWgDY02rFHmCYHkp6k/Qo6VzSs6Sv+N1dTPktwDoSadOHonTWDhsi95K+JR2E/gAQjwJ/ZwSAJIrjEgZoh91Et1OxIEKnU91tAHaUi+cx+D/ksNM8wy5ALtYbuh1XxQ8DIAlSbHIVM/sXANozg0oig2MIHMUZkohgu8gO4tO3NA8Z7bOldwaAVc+mFM/7ZyvA7KJE6943LL/PKGpZsrNmF7VaFejeMhtZS3ZVlnh20RzkdTFbvxuQsoz5XpQPji9Q3vUj65qY7KhyVeT9g/+tfQ/AbwYum70de3syR4Y6FLN4B78fNGgZwcR3kQAAAABJRU5ErkJggg=="/>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANBJREFUSEvtlesNwjAMhL9uQicBNimTwCbAJLAJ3YTqqloYCDhAIvGjlqpGkXVnnx9pqGxNZXxmglDhR4kWQAcsAZ1l9k+B9e5SZ31H4Gz3nmAFnMKQYgeRbIzEE+yn6GOI2EMZrOXmCS6BHDHszUNZtJ8SKCJl+a4mRpEkuAYhKltrgm1GOqM6XqIcAsPNIfpfgh3wlURRF/1cZA2Zhq2EJeegJMFhmua7LlJnSKYSJjnHfZRadiqgyHKWnTD8whPoy2VXIvInjPlFC2WtLtEAOrgkGaLy3nEAAAAASUVORK5CYII="/>
+    </div>
+    
+</body>
+</html>

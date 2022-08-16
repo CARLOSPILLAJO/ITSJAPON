@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Instituto Superior Tecnológico "Japón"</title>
+    <style type="text/css">
+        a{
+            text-decoration: none; 
+        }
+        div.menu{
+        background-color: rgba(246, 195, 44, 0.91);   
+				z-index: 2;	 
+        width: 100%;
+        bottom: 81%;
+        left: 0;
+        }
+        .menu {  
+        padding: 50px 30px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: rgb(84, 16, 245);
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: none;
+        position: fixed;
+        
+        }
+        .menu:hover {
+        pointer-events: all;
+        }
+        .label {
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: all;
+        }
+        .spacer {
+        display: inline-block;
+        width: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        }
+        .spacer:before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #7118e6;
+        height: 1px;
+        width: 0%;
+        transition: width 0.25s ease;
+        transition-delay: 0.7s;
+        }
+        .item {
+        position: relative;
+        display: inline-block;
+        margin-right: 30px;
+        top: 0px;
+        opacity: 0;
+        transition: opacity 0.5s ease, top 0.5s ease;
+        transition-delay: 0;
+        }
+        span {
+        transition: color 0.5s ease;
+        }
+        .item:hover span {
+        color: #ff0000;
+        }
+        .menu:hover .spacer:before {
+        width: 100%;
+        transition-delay: 0s;
+        }
+        .menu:hover .item {
+        opacity: 1;
+        top: 0px;
+        }
+        .item:nth-child(1) {
+        transition-delay: 0.45s;
+        }
+        .item:nth-child(2) {
+        transition-delay: 0.4s;
+        }
+        .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .item:nth-child(4) {
+        transition-delay: 0.3s;
+        }
+        .item:nth-child(5) {
+        transition-delay: 0.25s;
+        }
+        .item:nth-child(6) {
+        transition-delay: 0.2s;
+        }
+        .item:nth-child(7) {
+        transition-delay: 0.15s;
+        }
+        .item:nth-child(8) {
+        transition-delay: 0.1s;
+        }
+        .item:nth-child(9) {
+        transition-delay: 0.05s;
+        }
+        .item:nth-child(10) {
+        transition-delay: 0s;
+        }
+        .menu:hover .item:nth-child(1) {
+        transition-delay: 0.25s;
+        }
+        .menu:hover .item:nth-child(2) {
+        transition-delay: 0.3s;
+        }
+        .menu:hover .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .menu:hover .item:nth-child(4) {
+        transition-delay: 0.4s;
+        }
+        .menu:hover .item:nth-child(5) {
+        transition-delay: 0.45s;
+        }
+        .menu:hover .item:nth-child(6) {
+        transition-delay: 0.5s;
+        }
+        .menu:hover .item:nth-child(7) {
+        transition-delay: 0.55s;
+        }
+        .menu:hover .item:nth-child(8) {
+        transition-delay: 0.6s;
+        }
+        .menu:hover .item:nth-child(9) {
+        transition-delay: 0.65s;
+        }
+        .menu:hover .item:nth-child(10) {
+        transition-delay: 0.7s;
+        } 
+.logo{
+            position: fixed;
+            z-index: 2;
+            left: 85%;
+            top: 30px;
+        }
+        #btn-fixed {
+        
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+       }
+       
+       .footer {
+        
+        width: 97.5%;
+        margin-top: -5px;
+        margin-left: -8px;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 30px 30px 20px 30px;
+        color: rgb(245, 238, 238);
+        background-color: #482a77;
+        border-top: 1px solid #e5e5e5;
+        }
+        .footer > * {
+          flex:  1 100%;
+        }
+        .footer__addr {
+          margin-right: 1.25em;
+          margin-bottom: 2em;
+        }
+        .footer__addr h2 {
+          margin-top: 1.3em;
+          font-size: 15px;
+          font-weight: 400;
+        }
+       .nav__title {
+          font-weight: 400;
+          font-size: 15px;
+        }
+        .footer address {
+          font-style: normal;
+          color: #999;
+        }
+        .footer__btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 36px;
+          max-width: max-content;
+          background-color: rgba(245, 236, 236, 0.07);
+          border-radius: 100px;
+          color: #f5f3f3;
+          line-height: 0;
+          margin: 0.6em 0;
+          font-size: 1rem;
+          padding: 0 1.3em;
+        }
+        .footer ul {
+          list-style: none;
+          padding-left: 0;
+        }
+        .footer li {
+          line-height: 2em;
+        }
+        .footer a {
+          text-decoration: none;
+        }
+        .footer__nav {
+          display: flex;
+          flex-flow: row wrap;
+        }
+
+        .footer__nav > * {
+          flex: 1 50%;
+          margin-right: 1.25em;
+        }
+
+        .nav__ul a {
+          color: #999;
+        }
+
+        .nav__ul--extra {
+          column-count: 2;
+          column-gap: 1.25em;
+        }
+
+        .legal {
+          display: flex;
+          flex-wrap: wrap;
+          color: #999;
+        }
+          
+        .legal__links {
+          display: flex;
+          align-items: center;
+        }
+
+        .heart {
+          color: #f0eeee;
+        }
+
+        @media screen and (min-width: 24.375em) {
+          .legal .legal__links {
+            margin-left: auto;
+          }
+        }
+
+      @media screen and (min-width: 40.375em) {
+        .footer__nav > * {
+          flex: 1;
+        }
+        
+        .nav__item--extra {
+          flex-grow: 2;
+        }
+        
+        .footer__addr {
+          flex: 1 0px;
+        }
+        
+        .footer__nav {
+          flex: 2 0px;
+        }
+      }
+      .logo1{
+        
+        margin-top: -15%;
+        margin-left: 17%;
+      }
+      .sello{
+        
+        
+        margin-top: -14%;
+        padding-left: 80%;
+      }
+    
+.grid-container {
+  margin-top: 10%;
+  margin-bottom: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 1em;
+}
+
+
+/* hover styles */
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.location-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+
+.location-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: rgba(90,0,10,0.4);
+  color: white;
+  
+  /* position the text in t’ middle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-listing:hover .location-title {
+  opacity: 1;
+}
+
+.location-listing:hover .location-image img {
+  filter: blur(2px);
+}
+
+
+/* for touch screen devices */
+@media (hover: none) { 
+  .location-title {
+    opacity: 1;
+  }
+  .location-image img {
+    filter: blur(2px);
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="label">MENU</div>
+        <div class="spacer"></div>
+        <div class="item"><a href="inicio.html"><span>INICIO</span></a></div>
+        <div class="item"><a href="ITSJ.html"><span>ITSJ</span></a></div>
+        <div class="item"><a href="carreras.html"><span>CARRERAS</span></a></div>
+        <div class="item"><a href="galeria.html"><span>GALERIA</span></a></div>
+        <div class="item"><a href="contactos.html"><span>CONTACTOS</span></a></div>
+      </div>
+      <div class="logo"><a href="inicio.html"><img src="LOGO-HERALDICO-color1.png" width="210"></a></div>
+      <div class="child-page-listing">       
+        <div class="grid-container">   
+        <article id="3685" class="location-listing">   
+            <a class="location-title" href="https://itsjapon.edu.ec/instituto-japon-celebro-los-449-anos-de-fundacion-en-el-desfile-de-la-confraternidad-de-pomasqui/">
+                LOOR A 449 AÑOS 
+                POMASQUI           </a>    
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="https://itsjapon.edu.ec/wp-content/uploads/2022/08/Principal-6-980x653.jpg" alt="san francisco">    </a>
+      
+            </div>
+      
+          </article>
+      
+          <article id="3688" class="location-listing">
+      
+            <a class="location-title" href="https://itsjapon.edu.ec/instituto-japon-homenajeo-los-125-anos-de-parroquializacion-de-calderon-con-una-delegacion-de-mas-400-estudiantes/">
+                HOMENAJE A LOS 125 AÑOS DE LA PARROQUIA DE CARLDERÓN            </a>
+      
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="https://itsjapon.edu.ec/wp-content/uploads/2022/08/Principal-5-980x653.jpg" alt="london">  </a>
+      
+            </div>
+      
+          </article>
+      
+          <article id="3691" class="location-listing">
+      
+            <a class="location-title" href="https://itsjapon.edu.ec/instituto-japon-otorgo-titulos-de-tercer-nivel-estudiantes-de-las-diferentes-carreras/">
+                GRADUADOS CON TITULO DE TERCER NIVEL            </a>
+      
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="https://itsjapon.edu.ec/wp-content/uploads/2022/08/Principal-4-1080x675.jpg" alt="new york">  </a>
+      
+            </div>
+      
+          </article>
+      
+          <article id="3694" class="location-listing">
+      
+            <a class="location-title" href="https://itsjapon.edu.ec/exito-total-fue-la-feria-productiva-gastronomica-automotriz-educativa-del-instituto-japon-y-el-gad-de-llano-chico/">
+                EXITO EN LA FERIA PRODUCTIVA           </a>
+      
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="https://itsjapon.edu.ec/wp-content/uploads/2022/08/Principal-3-1080x675.jpg" alt="cape town">  </a>
+      
+            </div>
+      
+          </article>
+      
+          <article id="3697" class="location-listing">
+      
+            <a class="location-title" href="#">
+                INSTALACIONES           </a>
+      
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="Captura de pantalla 2022-08-12 110127.png" alt="beijing">    </a>
+      
+            </div>
+      
+          </article>
+      
+          <article id="3700" class="location-listing">
+      
+            <a class="location-title" href="https://itsjapon.edu.ec/capacitacion-docente/">
+                DOCENTES           </a>
+      
+            <div class="location-image">
+              <a href="#">
+                  <img width="500" height="269" src="Captura de pantalla 2022-08-13 145035.png" alt="paris">          
+                </a>
+            </div>
+      
+          </article>
+      
+        </div>
+        <!-- end grid container -->
+      
+      </div>
+      <footer class="footer">
+        <div class="footer__addr">         
+          <h2>Contacto</h2>     
+          <address>
+            02-2356 368<br>            
+            <a class="footer__btn" href="admisiones@itsjapon.edu.ec">Email Us</a>
+          </address>
+        </div>  
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Sede Quito</h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Dirección: Pomasqui, Marieta de Veintimilla 170177 Quito-Ecuador</a>
+              </li>
+               <br>
+              <li>
+                <a href="#">Teléfono: 0990871994</a>
+              </li>       
+            </ul>
+          </li>    
+          <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">Sede Santo Domingo</h2>     
+            <ul class="nav__ul nav__ul--extra">
+              <li>
+                <a href="#">Dirección: Av.Galápagos y calle <br> Cuenca frene a Solca 
+                  <br> Teléfono: 022 754 009 / 0963067678</a>
+                  <div class="legal">
+                    <p>&copy; 2022 Carlos Pillajo. All rights reserved.</p>
+                    
+                    <div class="legal__links">
+                      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+                    </div>
+              </li>           
+            </ul>
+          </li> 
+        </ul>        
+       </div>
+      </footer>
+      <div class="logo1"><img src="242205242_1477505005952654_600078293669579804_n.png" width="200" ></div>
+      <div class="sello"><img src="510-x-287-BN.png" width="200"></div>
+    </body>
+</html>

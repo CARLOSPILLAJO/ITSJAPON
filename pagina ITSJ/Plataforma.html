@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataformas | Instituto Superior Tecnológico "Japón"</title>
+    <style type="text/css">
+        a{
+            text-decoration: none; 
+        }
+        div.menu{
+        background-color: rgba(246, 195, 44, 0.91);   
+				z-index: 2;	 
+        width: 100%;
+        bottom: 81%;
+        left: 0;
+        }
+        .menu {  
+        padding: 50px 30px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: rgb(84, 16, 245);
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: none;
+        position: fixed;
+        
+        }
+        .menu:hover {
+        pointer-events: all;
+        }
+        .label {
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: all;
+        }
+        .spacer {
+        display: inline-block;
+        width: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        }
+        .spacer:before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #7118e6;
+        height: 1px;
+        width: 0%;
+        transition: width 0.25s ease;
+        transition-delay: 0.7s;
+        }
+        .item {
+        position: relative;
+        display: inline-block;
+        margin-right: 30px;
+        top: 0px;
+        opacity: 0;
+        transition: opacity 0.5s ease, top 0.5s ease;
+        transition-delay: 0;
+        }
+        span {
+        transition: color 0.5s ease;
+        }
+        .item:hover span {
+        color: #ff0000;
+        }
+        .menu:hover .spacer:before {
+        width: 100%;
+        transition-delay: 0s;
+        }
+        .menu:hover .item {
+        opacity: 1;
+        top: 0px;
+        }
+        .item:nth-child(1) {
+        transition-delay: 0.45s;
+        }
+        .item:nth-child(2) {
+        transition-delay: 0.4s;
+        }
+        .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .item:nth-child(4) {
+        transition-delay: 0.3s;
+        }
+        .item:nth-child(5) {
+        transition-delay: 0.25s;
+        }
+        .item:nth-child(6) {
+        transition-delay: 0.2s;
+        }
+        .item:nth-child(7) {
+        transition-delay: 0.15s;
+        }
+        .item:nth-child(8) {
+        transition-delay: 0.1s;
+        }
+        .item:nth-child(9) {
+        transition-delay: 0.05s;
+        }
+        .item:nth-child(10) {
+        transition-delay: 0s;
+        }
+        .menu:hover .item:nth-child(1) {
+        transition-delay: 0.25s;
+        }
+        .menu:hover .item:nth-child(2) {
+        transition-delay: 0.3s;
+        }
+        .menu:hover .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .menu:hover .item:nth-child(4) {
+        transition-delay: 0.4s;
+        }
+        .menu:hover .item:nth-child(5) {
+        transition-delay: 0.45s;
+        }
+        .menu:hover .item:nth-child(6) {
+        transition-delay: 0.5s;
+        }
+        .menu:hover .item:nth-child(7) {
+        transition-delay: 0.55s;
+        }
+        .menu:hover .item:nth-child(8) {
+        transition-delay: 0.6s;
+        }
+        .menu:hover .item:nth-child(9) {
+        transition-delay: 0.65s;
+        }
+        .menu:hover .item:nth-child(10) {
+        transition-delay: 0.7s;
+        } 
+.logo{
+            position: fixed;
+            z-index: 2;
+            left: 85%;
+            top: 30px;
+        }
+        #btn-fixed {
+        
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+       }
+       
+        ul.acorh,
+        ul.acorh * {
+        margin-top: 0%;
+        padding: 0;
+        border: 0;
+        }
+        ul.acorh {
+        position: relative;
+        bottom: -133px;
+        padding: 0;
+        list-style: none;
+        width: 8%;
+        font-size: 18px;
+        left: -8px;
+        }
+        ul.acorh li {
+        list-style: none;
+        }
+        ul.acorh li a {
+        display: block;
+        padding: 10px 10px 10px 20px;
+        background: #482a77;
+        color: #eee;
+        border-bottom: 1px solid rgba(246,195,44,0.91);;
+        border-top: 1px solid rgba(246,195,44,0.91);;
+        text-decoration: none;
+        box-sizing: border-box;
+        }
+        ul.acorh li ul {
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        transition: .3s all ease-in;
+        }
+        ul.acorh li li a {
+        padding: 10px 10px 10px 40px;
+        background: #482a77a2;
+        color: #000;
+        font-size: 16px;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        }
+        ul.acorc li li:last-child a {
+        border-bottom: 0;
+        }
+        ul.acorh li:hover ul {
+        max-height: 300px;
+        transition: .3s all ease-in;
+        }
+        ul.acorh li a:hover {
+        background: rgba(246,195,44,0.91);;
+        color: #fff;
+        }
+        .footer {
+        
+        width: 97.5%;
+        margin-top: -5px;
+        margin-left: -8px;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 30px 30px 20px 30px;
+        color: rgb(245, 238, 238);
+        background-color: #482a77;
+        border-top: 1px solid #e5e5e5;
+        }
+        .footer > * {
+          flex:  1 100%;
+        }
+        .footer__addr {
+          margin-right: 1.25em;
+          margin-bottom: 2em;
+        }
+        .footer__addr h2 {
+          margin-top: 1.3em;
+          font-size: 15px;
+          font-weight: 400;
+        }
+       .nav__title {
+          font-weight: 400;
+          font-size: 15px;
+        }
+        .footer address {
+          font-style: normal;
+          color: #999;
+        }
+        .footer__btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 36px;
+          max-width: max-content;
+          background-color: rgba(245, 236, 236, 0.07);
+          border-radius: 100px;
+          color: #f5f3f3;
+          line-height: 0;
+          margin: 0.6em 0;
+          font-size: 1rem;
+          padding: 0 1.3em;
+        }
+        .footer ul {
+          list-style: none;
+          padding-left: 0;
+        }
+        .footer li {
+          line-height: 2em;
+        }
+        .footer a {
+          text-decoration: none;
+        }
+        .footer__nav {
+          display: flex;
+          flex-flow: row wrap;
+        }
+
+        .footer__nav > * {
+          flex: 1 50%;
+          margin-right: 1.25em;
+        }
+
+        .nav__ul a {
+          color: #999;
+        }
+
+        .nav__ul--extra {
+          column-count: 2;
+          column-gap: 1.25em;
+        }
+
+        .legal {
+          display: flex;
+          flex-wrap: wrap;
+          color: #999;
+        }
+          
+        .legal__links {
+          display: flex;
+          align-items: center;
+        }
+
+        .heart {
+          color: #f0eeee;
+        }
+
+        @media screen and (min-width: 24.375em) {
+          .legal .legal__links {
+            margin-left: auto;
+          }
+        }
+
+      @media screen and (min-width: 40.375em) {
+        .footer__nav > * {
+          flex: 1;
+        }
+        
+        .nav__item--extra {
+          flex-grow: 2;
+        }
+        
+        .footer__addr {
+          flex: 1 0px;
+        }
+        
+        .footer__nav {
+          flex: 2 0px;
+        }
+      }
+      .logo1{
+        
+        margin-top: -15%;
+        margin-left: 17%;
+      }
+      .sello{
+        
+        
+        margin-top: -14%;
+        padding-left: 80%;
+      }
+      .box{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 150px;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  .card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.685);
+  }
+  .card:before,
+  .card:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card:hover:before{
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px #482a77;
+  }
+  .card:hover:after{
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px #482a77;
+  }
+  .card .imgBx{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+  }
+  
+  .card:hover .imgBx
+  {
+    bottom: 80px;
+  }
+
+  .card .imgBx img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .card .details{
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      height: 60px;
+      text-align: center;
+  }
+
+  .card .details h2{
+   margin: 0;
+   padding: 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #777;
+   text-transform: uppercase;
+  } 
+
+  .card .details h2 span{
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+   } 
+   .card1{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    margin-left: 85%;
+    margin-bottom: 10%;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.685);
+  }
+  .card1:before,
+  .card1:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card1:hover:before{
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px #482a77;
+  }
+  .card1:hover:after{
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px #482a77;
+  }
+  .card1 .imgBx{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+  }
+  
+  .card1:hover .imgBx
+  {
+    bottom: 80px;
+  }
+
+  .card1 .imgBx img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .card1 .details1{
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      height: 60px;
+      text-align: center;
+  }
+
+  .card1 .details1 h2{
+   margin: 0;
+   padding: 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #777;
+   text-transform: uppercase;
+  } 
+
+  .card1 .details1 h2 span{
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+   } 
+   .centro{
+    margin-left: 40%;
+    font-family: "Arial";
+    color: #482a77;
+   }
+   .idiomas{
+    margin-left: 22%;
+    margin-bottom: 2%;
+   }
+
+   button {
+   
+    margin-left: 34%;
+    margin-bottom: 2%;
+ width: 580px;
+ height: 45px;
+ font-size: 23px;
+ cursor: pointer;
+ border: none;
+ outline: none;
+ background: transparent;
+ color: #482a77;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: 700;
+ position: relative;
+ transition: all 0.5s;
+ z-index: 1;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 5px;
+ height: 100%;
+ background-color: #482a77;
+ z-index: -1;
+ transition: all 0.5s;
+}
+
+button:hover::before {
+ width: 100%;
+}
+
+button:hover {
+  
+ color: rgba(246, 195, 44, 0.91);   
+}
+
+button:active:before {
+ background: #b9b9b9;
+}
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="label">MENU</div>
+        <div class="spacer"></div>
+        <div class="item"><a href="inicio.html"><span>INICIO</span></a></div>
+        <div class="item"><a href="ITSJ.html"><span>ITSJ</span></a></div>
+        <div class="item"><a href="carreras.html"><span>CARRERAS</span></a></div>
+        <div class="item"><a href="galeria.html"><span>GALERIA</span></a></div>
+        <div class="item"><a href="contactos.html"><span>CONTACTOS</span></a></div>
+      </div>
+      <div class="logo"><a href="inicio.html"><img src="LOGO-HERALDICO-color1.png" width="210"></a></div>
+      <ul class="acorh">
+        <li><a href="#">OPCIONES</a>
+          <ul>
+            <li><a href="ITSJ.html">Misión / Visión</a></li>
+            <li><a href="biblioteca.html">Biblioteca</a></li>
+            <li><a href="Plataforma.html">Plataformas</a></li>
+
+          </ul>
+        </li>
+        </li>
+      </ul>
+      <div class="box">
+        <div class="card">
+          <div class="imgBx">
+              <a href="https://pao.itsjapon.edu.ec/"target="_blank" rel="noopener noreferrer"><img src="14.png" alt="images"></a>
+          </div>
+          <div class="details">
+              <h2>Plataforma de Aprendizaje online<br><span>PAO</span></h2>
+          </div>
+        </div>
+      
+         <div class="card">
+           <div class="imgBx">
+              <a href="https://sga2.itsjapon.edu.ec/login?ret=/"target="_blank" rel="noopener noreferrer"><img src="https://itsjapon.edu.ec/wp-content/uploads/2020/05/amor-a.jpg" alt="images"></a>
+           </div>
+           <div class="details">
+              <h2>Sistema Gestión Académica<br><span>SGA</span></h2>
+            </div>
+         </div>
+  
+         <div class="card1">
+           <div class="imgBx">
+              <a href="https://teams.microsoft.com/"target="_blank" rel="noopener noreferrer"><img src="https://tuwebtecno.com/wp-content/uploads/2021/02/Se-corrigieron-las-salas-de-reuniones-de-Microsoft-Teams-que.png" alt="images"></a>
+           </div>
+           <div class="details1">
+              <h2>Microsoft Teams<br><span>TEAMS</span></h2>
+            </div>
+         </div>
+    </div>
+    <h1 class="centro">Centro de Idiomas</h1>
+    <img class="idiomas" src="https://itsjapon.edu.ec/wp-content/uploads/2022/07/CRONOGRAMA-IDIOMAS-2022-768x529.jpg" alt="Idiomas" width="900" height="700">
+    <button> Acceder a la Plataforma Virtual de Centro de Idiomas
+    </button>
+      <footer class="footer">
+        <div class="footer__addr">         
+          <h2>Contacto</h2>     
+          <address>
+            02-2356 368<br>            
+            <a class="footer__btn" href="admisiones@itsjapon.edu.ec">Email Us</a>
+          </address>
+        </div>  
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Sede Quito</h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Dirección: Pomasqui, Marieta de Veintimilla 170177 Quito-Ecuador</a>
+              </li>
+               <br>
+              <li>
+                <a href="#">Teléfono: 0990871994</a>
+              </li>       
+            </ul>
+          </li>    
+          <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">Sede Santo Domingo</h2>     
+            <ul class="nav__ul nav__ul--extra">
+              <li>
+                <a href="#">Dirección: Av.Galápagos y calle <br> Cuenca frene a Solca 
+                  <br> Teléfono: 022 754 009 / 0963067678</a>
+                  <div class="legal">
+                    <p>&copy; 2022 Carlos Pillajo. All rights reserved.</p>
+                    
+                    <div class="legal__links">
+                      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+                    </div>
+              </li>           
+            </ul>
+          </li> 
+        </ul>        
+       </div>
+      </footer>
+      <div class="logo1"><img src="242205242_1477505005952654_600078293669579804_n.png" width="200" ></div>
+      <div class="sello"><img src="510-x-287-BN.png" width="200"></div>
+    </body>
+</html>

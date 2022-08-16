@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras | Instituto Superior Tecnológico "Japón"</title>
+    <style type="text/css">
+        a{
+            text-decoration: none; 
+        }
+        div.menu{
+        background-color: rgba(246, 195, 44, 0.91);   
+				z-index: 2;	 
+        width: 100%;
+        bottom: 81%;
+        left: 0;
+        }
+        .menu {  
+        padding: 50px 30px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: rgb(84, 16, 245);
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: none;
+        position: fixed;
+        
+        }
+        .menu:hover {
+        pointer-events: all;
+        }
+        .label {
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: all;
+        }
+        .spacer {
+        display: inline-block;
+        width: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        }
+        .spacer:before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #7118e6;
+        height: 1px;
+        width: 0%;
+        transition: width 0.25s ease;
+        transition-delay: 0.7s;
+        }
+        .item {
+        position: relative;
+        display: inline-block;
+        margin-right: 30px;
+        top: 0px;
+        opacity: 0;
+        transition: opacity 0.5s ease, top 0.5s ease;
+        transition-delay: 0;
+        }
+        span {
+        transition: color 0.5s ease;
+        }
+        .item:hover span {
+        color: #ff0000;
+        }
+        .menu:hover .spacer:before {
+        width: 100%;
+        transition-delay: 0s;
+        }
+        .menu:hover .item {
+        opacity: 1;
+        top: 0px;
+        }
+        .item:nth-child(1) {
+        transition-delay: 0.45s;
+        }
+        .item:nth-child(2) {
+        transition-delay: 0.4s;
+        }
+        .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .item:nth-child(4) {
+        transition-delay: 0.3s;
+        }
+        .item:nth-child(5) {
+        transition-delay: 0.25s;
+        }
+        .item:nth-child(6) {
+        transition-delay: 0.2s;
+        }
+        .item:nth-child(7) {
+        transition-delay: 0.15s;
+        }
+        .item:nth-child(8) {
+        transition-delay: 0.1s;
+        }
+        .item:nth-child(9) {
+        transition-delay: 0.05s;
+        }
+        .item:nth-child(10) {
+        transition-delay: 0s;
+        }
+        .menu:hover .item:nth-child(1) {
+        transition-delay: 0.25s;
+        }
+        .menu:hover .item:nth-child(2) {
+        transition-delay: 0.3s;
+        }
+        .menu:hover .item:nth-child(3) {
+        transition-delay: 0.35s;
+        }
+        .menu:hover .item:nth-child(4) {
+        transition-delay: 0.4s;
+        }
+        .menu:hover .item:nth-child(5) {
+        transition-delay: 0.45s;
+        }
+        .menu:hover .item:nth-child(6) {
+        transition-delay: 0.5s;
+        }
+        .menu:hover .item:nth-child(7) {
+        transition-delay: 0.55s;
+        }
+        .menu:hover .item:nth-child(8) {
+        transition-delay: 0.6s;
+        }
+        .menu:hover .item:nth-child(9) {
+        transition-delay: 0.65s;
+        }
+        .menu:hover .item:nth-child(10) {
+        transition-delay: 0.7s;
+        } 
+.logo{
+            position: fixed;
+            z-index: 2;
+            left: 85%;
+            top: 30px;
+        }
+        #btn-fixed {
+        
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+       }
+       
+       .footer {
+        
+        width: 97.5%;
+        margin-top: -5px;
+        margin-left: -8px;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 30px 30px 20px 30px;
+        color: rgb(245, 238, 238);
+        background-color: #482a77;
+        border-top: 1px solid #e5e5e5;
+        }
+        .footer > * {
+          flex:  1 100%;
+        }
+        .footer__addr {
+          margin-right: 1.25em;
+          margin-bottom: 2em;
+        }
+        .footer__addr h2 {
+          margin-top: 1.3em;
+          font-size: 15px;
+          font-weight: 400;
+        }
+       .nav__title {
+          font-weight: 400;
+          font-size: 15px;
+        }
+        .footer address {
+          font-style: normal;
+          color: #999;
+        }
+        .footer__btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 36px;
+          max-width: max-content;
+          background-color: rgba(245, 236, 236, 0.07);
+          border-radius: 100px;
+          color: #f5f3f3;
+          line-height: 0;
+          margin: 0.6em 0;
+          font-size: 1rem;
+          padding: 0 1.3em;
+        }
+        .footer ul {
+          list-style: none;
+          padding-left: 0;
+        }
+        .footer li {
+          line-height: 2em;
+        }
+        .footer a {
+          text-decoration: none;
+        }
+        .footer__nav {
+          display: flex;
+          flex-flow: row wrap;
+        }
+
+        .footer__nav > * {
+          flex: 1 50%;
+          margin-right: 1.25em;
+        }
+
+        .nav__ul a {
+          color: #999;
+        }
+
+        .nav__ul--extra {
+          column-count: 2;
+          column-gap: 1.25em;
+        }
+
+        .legal {
+          display: flex;
+          flex-wrap: wrap;
+          color: #999;
+        }
+          
+        .legal__links {
+          display: flex;
+          align-items: center;
+          
+        }
+
+        .heart {
+          color: #f0eeee;
+        }
+
+        @media screen and (min-width: 24.375em) {
+          .legal .legal__links {
+            margin-left: auto;
+          }
+        }
+
+      @media screen and (min-width: 40.375em) {
+        .footer__nav > * {
+          flex: 1;
+        }
+        
+        .nav__item--extra {
+          flex-grow: 2;
+        }
+        
+        .footer__addr {
+          flex: 1 0px;
+        }
+        
+        .footer__nav {
+          flex: 2 0px;
+        }
+      }
+      .logo1{
+        
+        margin-top: -15%;
+        margin-left: 17%;
+      }
+      .sello{
+        
+        
+        margin-top: -14%;
+        padding-left: 80%;
+      }
+      .container {
+        bottom: -30px;
+        margin-top: -1%;
+        margin-bottom: -1%;
+	min-width: 700px;
+	min-height: 350px;
+	border-radius: 20px;
+	position: relative;
+	-webkit-transition: 1.5s ease-in-out;
+	transition: 1.5s ease-in-out;
+	transform-style: preserve-3d;
+}
+
+.side {
+  
+	position: absolute;
+	text-align: center;
+	width: 50%;
+	height: 100%;
+	padding: 20px 50px;
+	color: #fff;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	border-radius: 20px;
+}
+.content {
+	transform: translatez(70px) scale(0.8);
+	line-height: 1.5em;
+}
+.content h1 {
+	position: relative;
+}
+.content p {
+	margin-top: 50px;
+	line-height: 2em;
+}
+.content h1:before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	height: 3px;
+	background-color: #3e3;
+	width: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.front {
+	z-index: 2;
+	background-size: 100vh;
+	background-size: cover;
+background-color: #482a77
+}
+.back {
+	background-color: #333;
+	transform: rotateY(180deg);
+	z-index: 0;
+	padding-top: 10px;
+  background-color: #482a77}
+.container:hover {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+
+.white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #fff;
+	transition: 0.35s ease-in-out;
+	position: fixed;
+	left: 15px;
+	bottom: 15px;
+	font-family: "Montserrat";
+}
+
+.white-mode:hover {
+	background-color: #fff;
+	color: #122;
+}
+.Electricidad{
+
+  margin-top: -18%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+.talento{
+  margin-top: -27%;
+  margin-left: 10%;
+}
+.mark{
+  margin-top: -27%;
+  margin-left: 10%;
+}
+.meca{
+  margin-top: -17%;
+  margin-left: 10%;
+}
+.desarrollo{
+  margin-top: -19%;
+  margin-left: 10%;
+}
+.inclusiva{
+  margin-top: -18%;
+  margin-left: 10%;
+}
+.empresa{
+  margin-top: -18%;
+  margin-left: 10%;
+}
+.gastro{
+  margin-top: -16%;
+  margin-left: 10%;
+}
+.integral{
+margin-top: -18%;
+  margin-left: 10%;
+}
+.turi{
+  margin-top: -17%;
+  margin-left: 10%;
+}
+.asis{
+  margin-top: -18%;
+  margin-left: 10%;
+}
+.conta{
+  margin-top: -18%;
+  margin-left: 10%;
+}
+ 
+nav a{
+  font-family: "Montserrat", sans-serif;
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    } 
+    nav li{
+      
+      margin-left: 1%;
+    display:inline-block;
+    width:20%;
+    padding:5px 10px;
+    background-color:#482a77;
+    border:1px solid rgba(246, 195, 44, 0.91);
+    text-align:center;
+    color:#fff;
+    }
+    nav li:hover{
+    background-color:#fff;
+    color:#000;
+    }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="label">MENU</div>
+        <div class="spacer"></div>
+        <div class="item"><a href="inicio.html"><span>INICIO</span></a></div>
+        <div class="item"><a href="ITSJ.html"><span>ITSJ</span></a></div>
+        <div class="item"><a href="carreras.html"><span>CARRERAS</span></a></div>
+        <div class="item"><a href="galeria.html"><span>GALERIA</span></a></div>
+        <div class="item"><a href="contactos.html"><span>CONTACTOS</span></a></div>
+      </div>
+      <div class="logo"><a href="inicio.html"><img src="LOGO-HERALDICO-color1.png" width="210"></a></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      
+      <nav><ul>
+        <li><a href="#ele">Electricidad</a></li>
+        <li><a href="#2">Tecnología en Gestión del Talento Humano</a></li>
+        <li><a href="#3">Marketing</a></li>
+        <li><a href="#4">Mecánica Automotriz</a></li>
+        <li><a href="#5">Desarrollo de Software</a></li>
+        <li><a href="#6">Asistencia en Educación Inclusiva</a></li>
+        <li><a href="#7">Administración de Empresas</a></li>
+        <li><a href="#8">Gastronomía </a></li>
+        <li><a href="#9">Estetica Integral</a></li>
+        <li><a href="#10">Turismo </a></li>
+        <li><a href="#11">Asistente Pedagógico</a></li>
+        <li><a href="#12">Contabilidad</a></li>
+    </ul></nav>
+        
+      <h1 id="ele">Electricidad</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la Carrera</h1>
+            <p>La Tecnología Superior en Electricidad busca atender las diversas problemáticas y necesidades visibles en el país referentes al sector energético. La carrera propone la planificación de instalaciones eléctricas en diferentes estructuras sean estos edificios, locales comerciales y residenciales sean públicas o privadas. Se encuentra estructurada de tal manera que los estudiantes mediante su formación académica se conviertan en profesionales que participen activamente en la solución de problemas y en la satisfacción de necesidades a nivel nacional y local.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil de Egreso:</h1>           
+          <p>El  Tecnólogo/a Superior en Electricidad del Instituto Superior Tecnológico Japón será un profesional que contribuye a la mejora de la calidad de vida, utilizando su espíritu empresarial humano y la innovación tecnológica para dar impulso al mejoramiento de sistemas eléctricos, sistemas operativos, sistemas de producción, contribuyendo así al entorno socio-ambiental.
+
+            Son responsables de practicar la ingeniería, el impacto social y medio ambiental, además del compromiso con la ética profesional, la responsabilidad y los estándares dela práctica de la ingeniería.</p>
+          </div>
+        </div>
+      </div>
+      <img class="Electricidad" src="https://itsjapon.edu.ec/wp-content/uploads/2022/05/electrician-1080554_1920.jpg" width="500">
+      <h1 id="2">Tecnólogo/s en  Gestión del Talento Humano</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la Carrera</h1>
+            <p>La Tecnología en Gestión del Talento Humano, dota a los profesionales de capacidades para retener en las organizaciones al  mejor talento, así como fomentar su desempeño, teniendo como resultado el aumento de la productividad, por ende el mejoramiento económico para las empresa, así mismo lograr un mejor clima  y satisfacción laboral por la disminución de la rotación de personal.</p>            
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil de Egreso:</h1>
+            <p>El Tecnólogo/s en  Gestión del Talento Humano, es un profesional capacitado para coordinar actividades de capacitación y desarrollo de competencias laborales. Organizar actividades de bienestar laboral teniendo en cuenta las necesidades organizacionales, además planea actividades de inducción para el nuevo personal y para los empleados que sean promovidos o transferidos de cargos y elabora nómina de sueldos de acuerdo con la normatividad vigente y procedimientos establecidos por la organización, liquida aportes de seguridad social de acuerdo a la normatividad vigente y procedimientos establecidos por la organización apoyando el desarrollo de programas relacionados con seguridad y salud ocupacional de acuerdo a la normatividad vigente y a los riesgos inherentes en organización e implementación acciones encaminadas a generar un clima organizacional favorable y finalmente coordina procesos relacionados con reclutamiento y selección de personal de acuerdo con los perfiles requeridos por el cargo.</p>
+          </div>
+        </div>
+      </div>
+      <img class="talento" src="https://coreglobalpartners.com.pe/wp-content/uploads/2020/06/que-es-la-gestion-del-talento-humano.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="3">Marketing</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la Carrera</h1>
+            <p>La carrera de Tecnologías en Marketing, tiene como objeto “entregar a la sociedad tecnólogos con conocimientos académicos, teórico prácticos, operativos y humanísticos; preparados científica y tecnológicamente para iniciar y administrar pequeñas medianas y grandes empresas, con aplicación de la investigación, Mercadeo, Producción y Administración; comprendido con el desarrollo sostenido y sustentable del país, con un liderazgo firme y solidario, que contribuyan al desarrollo comercial y económico de las empresas, se involucren en el proceso socio económico de producción e inversión, que contribuyan con el desarrollo social, humano, además formar profesionales capacitados, científica, técnica y éticamente, para desempeñarse en las áreas de Investigación de mercados, marketing y ventas de nuestro País.</p>           
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil de Egreso:</h1>
+            <p>El Tecnólogo/a, en Marketing será un profesional con formación teórica, metodológica, técnica e instrumental que intervenga en procesos de apoyo para la gestión de mercado de una organización, tendrá sólidas bases de ética y al mismo tiempo contará con una mentalidad emprendedora que le permitirá crear su propio emprendimiento, capacitado para responder a las exigencias del mercado ocupacional actual, trabajará apoyando las actividades de Marketing de empresas comerciales, industriales o de servicios, aplicando estrategias de comercialización que permitan un posicionamiento de la empresa, presentando soluciones integrales orientadas a la competitividad de productos, marcas y en pequeñas y medianas empresas.</p>
+          </div>
+        </div>
+      </div>
+      <img class="mark" src="https://rockcontent.com/es/wp-content/uploads/sites/3/2019/06/Como-realizar-una-estrategia-de-Marketing-de-Contenidos-completa.png" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="4">Mecánica Automotriz</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la Carrera</h1>
+            <p>La mecánica automotriz es una de las ramas de la mecánica fundamentales para cualquier vehículo de tracción mecánica. Es la encargada, además, de estudiar y analizar algunos de los componentes del vehículo y que tienen como principal fin la transmisión y generación de movimiento.
+              Ya que se trata de la rama que analiza el comportamiento del movimiento del vehículo, entre los elementos que estudia se halla el motor. Sin ir más lejos, este es el protagonista indiscutible de la fuerza que propicia el movimiento del vehículo, la parte central en donde se genera y se transmite todo lo necesario para que el coche pueda desplazarse de forma correcta.</p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>El graduado de la carrera de Mecánica Automotriz, será un profesional ético que poseerá los conocimientos de ciencias básicas de mecánica automotriz que le permiten a través de la evaluación y el análisis de las situaciones que afronta en su trabajo, proponer soluciones alternativas a problemas o necesidades de la industria automotriz de tipo técnico que requieren una solución con responsabilidad social y ambiental.
+
+              Frente a las nuevas situaciones de globalización de los mercados y abierta competencia, el Tecnólogo profesional en mecánica automotriz se caracteriza por su facilidad de adaptación al cambio, su versatilidad, su alta capacidad de liderazgo e innovación.</p>
+          </div>
+        </div>
+      </div>
+      <img class="meca" src="https://istcarloscisneros.edu.ec/wp-content/uploads/2020/03/Instituto-Tecnologico-Superior-Carlos-Cisneros-m-automo-min-1.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <h1 id="5">Desarrollo de Software</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la Carrera</h1>
+            <p>La carrera Tecnología en Desarrollo de Software en línea forma profesionales capaces de gestionar actividades de trabajo relacionadas a procesos de diseño y desarrollo de software, automatización de procesos en áreas de soporte de infraestructura tecnológica, soporte de redes de datos, gestión de proyectos tecnológicos, con destrezas para operar sistemas informáticos basados en los fundamentos de diseño de estructuras y plataformas informáticas con estándares internacionales. La metodología de enseñanza es teórica – práctica, puesto que los proyectos que se realizan en diferentes organizaciones les permiten a los estudiantes realizar trabajos de observación y diagnóstico relacionado a las actividades de la carrera.</p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            
+            <p>El estudiante al finalizar su formación profesional, debe ser capaz de demostrar sus capacidades relacionadas con conocimientos (saber), habilidades y destrezas (saber hacer) y actitudes (saber ser) en relación con las necesidades del contexto, particularmente:
+              Programa aplicaciones de software utilizando lógica de programación y lenguajes específicos, para resolver un problema determinado.
+              Desarrolla software para cualquier ambiente empresarial a partir de la detección de necesidades, levantamiento de información, diseño, análisis, programación, puesta en marcha y entrega funcionando, incluyendo instalación y la capacitación de personal.</p>
+          </div>
+        </div>
+      </div>
+      <img class="desarrollo" src="https://www.adasasystems.com/files/adasa/images/services/software-development/software_development.jpeg" width="500" alt="">
+      <h1 id="6">Asistencia en Educación Inclusiva</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>La educación inclusiva es un proceso de que toda la sociedad debe vivir, ya que es el punto de partida para normalizar la educación de todos los alumnos y alumnas y del mismo modo brindar diversas oportunidades para el desarrollo de las personas que tienen o viven con discapacidad o marginación.
+
+              Asimismo, uno de los principios básicos de la educación inclusiva es aquel que menciona que cada niño/a tiene características, intereses y capacidades de aprendizaje diferentes, por lo tanto se involucran ciertos cambios y modificaciones en contenidos y estrategias los cuales logran la inclusión y cumplen el propósito de educar a todos respondiendo a esta gama de necesidades educativas
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>Promover el desarrollo integral del niño y adolescente en el contexto escolar usando métodos, estrategias y técnicas inclusivas con respeto y empatía.
+
+              Acompañar el proceso de enseñanza aprendizaje a niños, niñas y adolescentes de nivel inicial y básico, para garantizar la inclusión.
+              
+              Identificar problemas en el desarrollo del niño y adolescente para canalizarlos desde la escuela a una instancia pertinente y evitar problemas que vayan en detrimento del aprendizaje y desempeño escolar.
+              
+              Realizar el seguimiento y la evaluación procesual a los estudiantes, considerando la normativa vigente para los centros escolares</p>
+          </div>
+        </div>
+      </div>
+      <img class="inclusiva" src="https://lamenteesmaravillosa.com/wp-content/uploads/2019/03/ninos-clase-con-profesora.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <h1 id="7">Administración de Empresas </h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>La Administración de Empresas necesita que los alumnos obtengan conocimientos en otras disciplinas liadas a ésta, las cuales son economía, finanzas, contabilidad y mercadeo.  Sin embargo, la formación de un administrador de empresas no sólo se centra en esas ramas. Un buen administrador tiene conocimientos académicos en manejo de operaciones, comercio exterior, recursos humanos, coaching  e, incluso, psicología industrial.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>Adquirirás conocimientos sobre administración, planificación, organización, proyectos, estrategias de dirección y control.
+
+              Te capacitarás para dirigir diferentes áreas de la organización como la administrativa, recursos humanos, marketing, operaciones, etc.
+              
+              Desarrollarás tu modelo de negocio.
+              
+              Nuestro modelo educativo se basa en la práctica lo que te hará brillar en el mundo profesional.
+              
+              Desarrollarás competencias que te ayudarán a tener un pensamiento crítico, creatividad, innovación y visión global.</p>
+          </div>
+        </div>
+      </div>
+      <img class="empresa" src="https://www.aauniv.com/s/wp-content/uploads/licenciatura-en-administracion-empresas.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <h1 id="8">Gastronomía</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>La carrera de Gastronomía forma profesionales de calidad dentro de todas las ramas de la industria. Esto les permitirá ejercer una función de alto nivel en cualquier parte del mundo, ya sea trabajando en cocina o formando parte del departamento de Alimentos y Bebidas de un restaurante, hotel, casino, servicio de catering, planificación de eventos, crucero, u otro.
+
+              El programa se basa en los más altos estándares académicos mundiales, tanto para satisfacer los requerimientos del exigente mercado internacional de servicios de alimentos y hospitalidad, como para contribuir con la calidad del servicio y el desarrollo turístico, económico y gastronómico del país.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>¿Por qué estudiar Gastronomía en el IST Japón?</h1>
+            <p>Actualmente la Gastronomía dirige sus tendencias a la formación de emprendedores de negocios innovadores de Alimentos y Bebidas; dirigiendo también a los requerimientos de mano de obra calificada y entrenada para garantizar la seguridad alimentaria, y así permitirá estipular la práctica profesional de técnicas de preparación de alimentos, salubridad y manipulación ; en base a teorías y modelos gastronómicos, que permitan la aplicación de todos los procesos adquiridos durante el periodo académico.</p>
+          </div>
+        </div>
+      </div>
+      <img class="gastro" src="https://www.usfq.edu.ec/sites/default/files/styles/down_md_images/public/2020-10/Portada%20Gastronomia.jpg?itok=cz6I1IJM" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="9">Estetica Integral</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>El esteticista integral se dedica a hacer tratamiento de belleza, enfocados específicamente hacia la piel. En ese sentido, un esteticista integral debe conocer qué tipo de tratamiento quiere el cliente y cuál debe ser el más apropiado. Para poder acertar esta conclusión/definición, el esteticista integral debe poseer ciertos conocimientos que le permitan abordar y decidir los mejores métodos dependiendo de las opciones disponibles y, sobre todo, de la edad y de tipo de piel del paciente.
+
+              En ese sentido, considerando que la estética integral es la unión entre la masofilaxia corporal y la cosmetología, un profesional en esta materia debería tener conocimientos sólidos en la biología básica, pues estará en contacto directo con la piel de los clientes.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Desempeños generales</h1>
+            <p>Administrará, gestionará y organizará un salón de belleza, Centro de Estética, Cabina o Spa.
+              Trabajará en Clínicas Estéticas para apoyar los procesos pre operatorios y postoperatorios.
+              Prestará servicios unipersonales referentes a mejorar la imagen personal de mujeres y hombres.
+              Trabajará en laboratorios en investigaciones realizadas en poblaciones acerca del impacto de aplicar los productos cosméticos en diversas poblaciones.</p>
+          </div>
+        </div>
+      </div>
+      <img class="integral" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2019/10/imagen-esteticista-agradable-haciendo-oxigenoterapia-mujer-joven-tendido_135427-188.jpg" width="500" alt=""><br>
+      <br>
+      <br>
+      <h1 id="10">Turismo</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>El Tecnólogo Superior en Turismo del Instituto Tecnológico Superior Japón, está en la capacidad de comunicarse en el idioma; así también planifica, organiza y ejecuta eventos de carácter masivo, artístico, cultural y corporativo como herramienta de desarrollo de la actividad turística, aplicando las normas vigentes que rigen en el Ecuador para la realización de diferentes eventos, estableciendo estándares de calidad que satisfagan las necesidades de los clientes.
+
+              Diseña y ejecuta planes de desarrollo y preservación turística midiendo la capacidad de carga de los recursos turísticos  evitando su deterioro y adaptándolos a las políticas ambientales.
+              
+              Diseña tours, itinerarios, rutas y/o circuitos con base en la oferta zonal de destinos turísticos del Ecuador utilizando matrices de costeo y procedimientos contables aplicados a servicios turísticos de manera ética y honesta.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>Elabora proyectos de empresas privadas o de vinculación con la comunidad en las áreas de servicios turísticos considerando
+              los impactos ambientales, sociales, económicos y culturales.
+              
+              Planifica diferentes operaciones concernientes al área turística con estricto apego a un marco ético y legal que lo lleva a
+              comprometerse en la integralidad y calidad de los servicios ofertados al cliente, turista o visitante, ademas de valorar la
+              diversidad de la flora, fauna y la multiculturalidad patrimonial a nivel mundial y nacional para el desarrollo de actividades turísticas sostenibles, considerando actores, elementos claves, metodología y técnicas adecuadas.
+              
+              El tecnologo en Turismo Aplica el conocimiento fundamental de ciencias básicas y sociales para sustentar el desarrollo de
+              procesos encaminados a la administración y gestión de actividades turísticas y técnicas de expresión oral y escrita para una  comunicación óptima y eficaz.</p>
+          </div>
+        </div>
+      </div>
+      <img class="turi" src="https://www.bbva.com/wp-content/uploads/2020/12/turismo_sostenible.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="11">Asistencia en Pedagógica</h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>La carrera en Asistente Pedagógico con nivel equivalente a Tecnólogo Superior, del Instituto Tecnológico Superior Japón, está orientada a formar profesionales en Asistente Pedagógico con nivel equivalente a Tecnólogo Superior con conocimientos para trabajar en el área de la educación infantil, la investigación y el desarrollo de proyectos orientados al trabajo para la infancia; capaces de asumir el cargo de asistente pedagógico e impactar en la educación, lo que obliga a fomentar en el estudiante una actitud investigativa que le permitirá al profesional ser eficiente en pedagogía además del asistente pedagógico está inmerso en el proceso de enseñanza aprendizaje colaborando al docente de aula. Asistir al docente de aula y acompañamiento a los estudiantes con niños, niñas. Se aplica a través de un equipo de trabajo formado por Licenciados en Educación y Tecnólogos Asistentes en Pedagogía.
+
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>Capaz de trabajar en el diseñar, implementar, asistir, acompañar y evaluar procesos de aprendizaje que favorezcan el desarrollo físico, emocional y cognitivo de niños y niñas, aplicando estrategias didácticas que optimicen el mismo.
+
+              Brindar soporte en gestión académica en unidades educativas públicas y privadas, centros de aprendizaje y tareas dirigidas, así como también pueden generar emprendimientos de estimulación temprana, desarrollo y recuperación de aprendizaje en niños de pre-escolar.
+              
+              Realizar la asistencia/colaboración al docente de aula y acompañamiento a los estudiantes si se va a trabajar con niños, niñas y/o adolescentes.</p>
+          </div>
+        </div>
+      </div>
+      <img class="asis" src="https://tecnologicoargos.edu.ec/wp-content/uploads/2020/09/pedagogia-edit.jpg" width="450" alt="">
+      <br>
+      <br>
+      <br>
+      <h1 id="12">Contabilidad
+      </h1>
+      <div class="container">
+        <div class="front side">
+          <div class="content">
+            <h1>Descripción de la carrera</h1>
+            <p>La carrera de Tecnología Superior en Contabilidad, del Instituto Tecnológico Superior Japón, está orientada a formar profesionales Tecnólogos en Contabilidad con conocimientos en Legislación Tributaria, Ley de Régimen Tributario Aduanero y Ley de Régimen Municipal, que sepan diseñar, implementar y evaluar los procesos tributarios relacionados con el ciclo contable y administrativo en su ámbito, utilizando como herramientas fundamentales las Tecnologías de la Información y las Comunicaciones, para responder a las exigencias de la sociedad, el Estado, las personas naturales y jurídicas que en su calidad de contribuyentes necesitan realizar declaraciones de impuestos, los propios graduados de la carrera, en el área de la recaudación de impuestos cuyas reformas dinámicas que se dan en los reglamentos y resoluciones, lo que obliga a fomentar en el estudiante una actitud investigativa que le permitirá al profesional ser eficiente en la gestión empresarial tributaria.
+            </p>
+          </div>
+        </div>
+        <div class="back side">
+          <div class="content">
+            <h1>Perfil Profesional:</h1>
+            <p>Está preparado para trabajar en empresas públicas y privadas así como también en su propia empresa bajo los estándares técnicos nacionales e internacionales de la profesión, principalmente para realizar las siguientes funciones: Aplicar con justicia las normas legales, contables, de régimen tributario aduanero, Ley de Régimen Municipal en temas relacionados a los tributos y sus respectivos reglamentos, realizar investigaciones y generar proyectos en el área de contabilidad, participar en la administración tributaria de las empresas públicas y privadas, generar y plantear propuestas de soluciones innovadoras de alto impacto en Realidad Nacional, sustentables en el tiempo, fomentando el respeto a las diferentes etnias, géneros y saberes ancestrales, aplicar con ética y responsabilidad social las normas, políticas y procedimientos de la organización, diseñar, e implementar los procesos tributarios en las etapas de planificación, organización, evaluación y control, relacionándolos con los procesos contables y administrativos en la gestión organizacional.</p>
+          </div>
+        </div>
+      </div>
+      <img class="conta" src="https://www.billin.net/blog/wp-content/uploads/2020/09/Libro-mayor-1140x760.jpg" width="500" alt="">
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <footer class="footer">
+        <div class="footer__addr">         
+          <h2>Contacto</h2>     
+          <address>
+            02-2356 368<br>            
+            <a class="footer__btn" href="admisiones@itsjapon.edu.ec">Email Us</a>
+          </address>
+        </div>  
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Sede Quito</h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Dirección: Pomasqui, Marieta de Veintimilla 170177 Quito-Ecuador</a>
+              </li>
+               <br>
+              <li>
+                <a href="#">Teléfono: 0990871994</a>
+              </li>       
+            </ul>
+          </li>    
+          <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">Sede Santo Domingo</h2>     
+            <ul class="nav__ul nav__ul--extra">
+              <li>
+                <a href="#">Dirección: Av.Galápagos y calle <br> Cuenca frene a Solca 
+                  <br> Teléfono: 022 754 009 / 0963067678</a>
+                  <div class="legal">
+                    <p>&copy; 2022 Carlos Pillajo. All rights reserved.</p>
+                    
+                    <div class="legal__links">
+                      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+                    </div>
+              </li>           
+            </ul>
+          </li> 
+        </ul>        
+       </div>
+      </footer>
+      <div class="logo1"><img src="242205242_1477505005952654_600078293669579804_n.png" width="200" ></div>
+      <div class="sello"><img src="510-x-287-BN.png" width="200"></div>
+    </body>
+</html>
